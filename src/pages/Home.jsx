@@ -6,6 +6,7 @@ import heroImage3 from '../assets/images/hero-img03.png'
 import { BsArrowRight } from "react-icons/bs";
 import Options from '../assets/data/Options'
 import Statistics from '../assets/data/Statistics'
+import About from '../components/about/About'
 
 const Home = () => {
   return (
@@ -88,14 +89,20 @@ const Home = () => {
                       <BsArrowRight className='group-hover:text-white w-6 h-5' />
                     </Link>
                   </div>
-
                 </div>
               ))
             }
           </div>
-
         </div>
       </section >
+
+
+      {/* About Section Start */}
+      <About />
+      {/* About Section End */}
+
+
+      
 
     </>
   )
