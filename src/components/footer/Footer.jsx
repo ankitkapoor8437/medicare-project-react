@@ -1,76 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
-import { RiLinkedinFill } from 'react-icons/ri'
-import { AiFillYoutube, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
-
-const socialLinks = [
-  {
-    path: "",
-    icon: <AiFillYoutube className='group-hover:text-white w-4 h-5' />,
-  },
-  {
-    path: "",
-    icon: <AiFillGithub className='group-hover:text-white w-4 h-5' />,
-  },
-  {
-    path: "",
-    icon: <AiOutlineInstagram className='group-hover:text-white w-4 h-5' />,
-  },
-  {
-    path: "",
-    icon: <RiLinkedinFill className='group-hover:text-white w-4 h-5' />,
-  },
-];
-
-const quickLinks1 = [
-  {
-    path: '/home',
-    display: 'Home',
-  },
-  {
-    path: '/',
-    display: 'About Us',
-  },
-  {
-    path: '/services',
-    display: 'Services',
-  },
-  {
-    path: '/',
-    display: 'Blog',
-  },
-];
-
-const quickLinks2 = [
-  {
-    path: '/find-a-doctor',
-    display: 'Find a Doctor',
-  },
-  {
-    path: '/',
-    display: 'Request an Appointment',
-  },
-  {
-    path: '/',
-    display: 'Find a location',
-  },
-  {
-    path: '/',
-    display: 'Get a Opinion',
-  },
-];
-
-const quickLinks3 = [
-  {
-    path: '/',
-    display: 'Donate',
-  },
-  {
-    path: '/contact',
-    display: 'Contact Us',
-  },
-];
+import { socialLinks, quickLinks1, quickLinks2, quickLinks3 } from '../../assets/data/footerData'
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -140,8 +71,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-
 
         </div>
       </div>
