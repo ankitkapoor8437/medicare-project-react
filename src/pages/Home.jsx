@@ -14,7 +14,6 @@ import Statistics from '../assets/data/Statistics'
 import About from '../components/about/About'
 import ServiceList from '../components/services/ServiceList'
 import FeatureList from '../assets/data/FeatureList';
-import { list } from 'postcss';
 
 const Home = () => {
   return (
