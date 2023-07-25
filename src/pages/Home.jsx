@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { BsArrowRight } from "react-icons/bs";
 import heroImage1 from '../assets/images/hero-img01.png'
 import heroImage2 from '../assets/images/hero-img02.png'
 import heroImage3 from '../assets/images/hero-img03.png'
-import { BsArrowRight } from "react-icons/bs";
 import Options from '../assets/data/Options'
 import Statistics from '../assets/data/Statistics'
 import About from '../components/about/About'
+import ServiceList from '../components/services/ServiceList'
 
 const Home = () => {
   return (
@@ -101,9 +102,22 @@ const Home = () => {
       <About />
       {/* About Section End */}
 
+      {/* Services start section */}
+      <section>
+        <div className='container'>
+          <div className='xl:w-[470px mx-auto]'>
+            <h2 className='heading text-center'>Our medical services.</h2>
+            <p className='text__para text-center'>
+              World class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
 
-      
+          <ServiceList />
 
+        </div>
+      </section>
+      {/* Services end section */}
     </>
   )
 }
