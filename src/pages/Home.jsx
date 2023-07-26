@@ -9,6 +9,7 @@ import heroImage3 from '../assets/images/hero-img03.png'
 import FeatureImage from '../assets/images/feature-img.png'
 import VideoIcon from '../assets/images/video-icon.png'
 import AvatarIcon from '../assets/images/avatar-icon.png'
+import faqImage from '../assets/images/faq-img.png'
 // Components
 import Options from '../assets/data/Options'
 import Statistics from '../assets/data/Statistics'
@@ -16,6 +17,7 @@ import About from '../components/about/About'
 import ServiceList from '../components/services/ServiceList'
 import FeatureList from '../assets/data/FeatureList';
 import DoctorList from '../components/doctors/DoctorList';
+import FaqList from '../components/faq/FaqList';
 
 const Home = () => {
   return (
@@ -190,8 +192,6 @@ const Home = () => {
       {/* Feature Section End*/}
 
       {/* Doctors Section Start */}
-
-
       <section>
         <div className='container'>
           <div className='xl:w-[470px mx-auto]'>
@@ -204,12 +204,25 @@ const Home = () => {
           <DoctorList />
         </div>
       </section>
-
-
-
-
-
       {/* Doctors Section End */}
+
+      {/* FAQ Section Start */}
+      <section>
+        <div className='container'>
+          <div className='flex justify-between gap-[50px] lg:gap-0'>
+            <div className='w-1/2 hidden md:block'>
+              <img src={faqImage} alt="" />
+            </div>
+            <div className='w-full md:w-1/2'>
+              <h2 className='heading'>Most questions by our beloved patients.</h2>
+              <FaqList />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* FAQ Section End */}
+
+
 
     </>
   )
