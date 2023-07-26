@@ -1,19 +1,21 @@
 import React from 'react'
+// Icons
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from "react-icons/bs";
+// Images
 import heroImage1 from '../assets/images/hero-img01.png'
 import heroImage2 from '../assets/images/hero-img02.png'
 import heroImage3 from '../assets/images/hero-img03.png'
 import FeatureImage from '../assets/images/feature-img.png'
 import VideoIcon from '../assets/images/video-icon.png'
 import AvatarIcon from '../assets/images/avatar-icon.png'
-
-
+// Components
 import Options from '../assets/data/Options'
 import Statistics from '../assets/data/Statistics'
 import About from '../components/about/About'
 import ServiceList from '../components/services/ServiceList'
 import FeatureList from '../assets/data/FeatureList';
+import DoctorList from '../components/doctors/DoctorList';
 
 const Home = () => {
   return (
@@ -185,8 +187,30 @@ const Home = () => {
           </div>
         </div>
       </section >
-
       {/* Feature Section End*/}
+
+      {/* Doctors Section Start */}
+
+
+      <section>
+        <div className='container'>
+          <div className='xl:w-[470px mx-auto]'>
+            <h2 className='heading text-center'>Our Great Doctors.</h2>
+            <p className='text__para text-center'>
+              World class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
+          <DoctorList />
+        </div>
+      </section>
+
+
+
+
+
+      {/* Doctors Section End */}
+
     </>
   )
 }
