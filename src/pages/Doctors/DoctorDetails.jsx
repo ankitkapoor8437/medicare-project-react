@@ -6,7 +6,6 @@ import DoctorFeedback from './DoctorFeedback';
 
 const DoctorDetails = () => {
   const [tab, setTab] = useState('about');
-  // console.log(tab);
   return (
     <section>
       <div className='max-w-[1170px] px-5 mx-auto'>
