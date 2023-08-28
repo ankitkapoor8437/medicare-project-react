@@ -2,54 +2,66 @@ import React, { useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
 const FeedbackForm = () => {
-    // State for selected rating and hovered rating
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     const [review, setReview] = useState("");
 
+    const [formData, setFormData] = useState({
+        rating: "",
+        review: ""
+    });
+
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setReview(value); // Update the review state
+
+        if (name === "rating") {
+            setRating(Number(value));
+        } else if (name === "review") {
+            setReview(value);
+        }
+
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+
+        console.log(name, value);
     }
 
-    const handleSubmitReview = async (event) => {
+    // console.log(formData);
+    console.log(rating);
+    const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(formData);
 
     }
 
     return (
         <form action="">
-
+            {/* Rating Section */}
             <div>
-                {/* Heading asking the user to rate their experience */}
                 <h3 className="text-headingColor text-[16px] leading-6 font-semibold mb-4 mt-0">
                     How would you rate the overall experience?*
                 </h3>
 
                 <div>
-                    {/* Generate star rating buttons */}
                     {[...Array(5).keys()].map((_, index) => {
                         const starIndex = index + 1;
                         return (
                             <button
                                 key={starIndex}
+                                name='rating'
                                 type='button'
-                                // Dynamic class to set color based on selection and hover
                                 className={`${starIndex <= ((rating && hover) || hover) ? "text-yellowColor" : "text-gray-400"} bg-transparent border-none outline-none text-[22px] cursor-pointer`}
-                                // Update selected rating on click
                                 onClick={() => setRating(starIndex)}
-                                // Set hover state on mouse enter
                                 onMouseEnter={() => { setHover(starIndex) }}
-                                // Maintain hover effect when mouse leaves
                                 onMouseLeave={() => setHover(rating)}
-                                // Double click to reset both rating and hover
                                 onDoubleClick={() => {
                                     setHover(0);
                                     setRating(0);
                                 }}
                             >
                                 <span>
-                                    {/* Star icon */}
                                     <AiFillStar />
                                 </span>
                             </button>
@@ -58,6 +70,7 @@ const FeedbackForm = () => {
                 </div>
             </div>
 
+            {/* Review Section */}
             <div className="mt-[30px]">
                 <h3 className="text-headingColor text-[16px] leading-6 font-semibold mb-4 mt-0">
                     Share your feedback or suggestions*
@@ -65,17 +78,13 @@ const FeedbackForm = () => {
                 <textarea
                     name='review'
                     value={review}
-                    className="
-                 border border-solid
-                border-[#0066ff34] focus:outline
-                 outline-primaryColor w-full px-4 py-3 rounded-md"
+                    className="border border-solid border-[#0066ff34] focus:outline outline-primaryColor w-full px-4 py-3 rounded-md"
                     rows="5"
                     placeholder='Write your message'
-                    onChange={handleChange}>
-
-                </textarea>
+                    onChange={handleChange}
+                ></textarea>
             </div>
-            <button type="submit" className="btn" onClick={handleSubmitReview}>
+            <button type="submit" className="btn" onClick={handleSubmit}>
                 Submit Feedback
             </button>
         </form>
