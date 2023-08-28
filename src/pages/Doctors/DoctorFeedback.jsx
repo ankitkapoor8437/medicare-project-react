@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import avatar from '../../assets/images/avatar-icon.png';
 import { formatDate } from '../../utils/formatDate';
 import { AiFillStar } from 'react-icons/ai';
+import FeedbackForm from './FeedbackForm';
 
 
 const DoctorFeedback = () => {
 
   const [feedback, setFeedback] = useState(false);
+  console.log(feedback);
 
   const num = 4;
   const stars = [...Array(num).keys()].map((_, index) => (
@@ -41,11 +43,13 @@ const DoctorFeedback = () => {
         </div>
       </div>
 
-      <div className="text-center">
-        <button className='btn'>
+      {!feedback && <div className="text-center">
+        <button className='btn' onClick={() => setFeedback(true)}>
           Give Feedback
         </button>
-      </div>
+      </div>}
+      {feedback && <FeedbackForm/>}
+
 
     </div>
   );
